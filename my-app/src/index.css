@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
+
+@font-face {
+  font-family: "Ms Sans Serif";
+  src: url("../public/ms-sans-serif-1/ms-sans-serif-1.ttf");
+}
+
+}
+ body {
+  font-family: "MS Sans Serif";
+  background-image: url("./assets/WindowsBg/win95Blue.jpg");
+  background-size: cover;
+}
+
+#resume, #close, #resize {
+    align-items: center;
+    background: #c3c3c3;
+    border-color: #fafafa #5a5a5a #5a5a5a #fafafa;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    height: 24px;
+    justify-content: center;
+    margin-left: 2px;
+    width:20px;
+}
