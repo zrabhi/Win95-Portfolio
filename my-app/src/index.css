@@ -9,17 +9,22 @@
   } */
 
   ::-webkit-scrollbar {
-    width: 24px; /* width of the entire scrollbar */
-    background-color: #c0c0c0; /* light gray background */
+    background: repeating-conic-gradient(#bdbebd 0, #bdbebd 25%, #fff 0, #fff 50%) 50% / 2px 2px;
+    width: 20px; /* width of the entire scrollbar */
 }
 
 /* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #808080; /* dark gray handle */
-    border: 4px solid #c0c0c0; /* add some border inside the track */
-    border-radius: 0px; /* square borders for a classic look */
-}
+    background: #bdbebd;
+    border-color: #fafafa #5a5a5a #5a5a5a #fafafa;
+    border-style: solid;
+    border-width: 1.5px;
+    outline: #dbdbdb;
+  }
+::-webkit-scrollbar-button {
 
+  height: 10px; 
+}
 /* Scrollbar corner */
 ::-webkit-scrollbar-corner {
     background-color: #c0c0c0; /* match the track */
@@ -38,6 +43,7 @@
 
 }
  body {
+  /* fixed may change later */
   font-family: "MS Sans Serif";
   background-image: url("./assets/WindowsBg/win95Blue.jpg");
   background-size: cover;
@@ -53,8 +59,26 @@
     display: flex;
     font-size: 20px;
     font-weight: 700;
-    height: 24px;
+    height: 19px;
     justify-content: center;
     margin-left: 2px;
-    width:20px;
+    width:18px;
+}
+
+#start{
+  background: silver;
+  border-color: #fafafa #5a5a5a #5a5a5a #fafafa;
+  box-shadow: 1.5px 1.5px #000;
+}
+
+#menu{
+    background: #c3c3c3;
+    border-color: #fafafa #5a5a5a #5a5a5a #fafafa;
+    border-style: solid;
+    border-width: 2px 1.5px 1.5px 2px;
+    box-shadow: 1.5px 1.5px #000;
+}
+#start:hover {
+  background-color: #bababa;
+  border-color: #5a5a5a  #fafafa  #fafafa #5a5a5a;
 }

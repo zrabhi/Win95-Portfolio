@@ -36,14 +36,14 @@ const Technologies = [
 
 export const Biography = () => {
   return (
-    <div className="overflow-y-auto resize z-99 border-4 left-48  fixed h-[780px] w-[550px] bg-gray95">
-      <div className="m-[1px]  w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
+    <div className=" overflow-y-auto resize z-99 border-4 left-48  fixed h-[780px] w-[550px] bg-gray95">
+      <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
         <div className="h-77 w-[540px] flex">
-          <img className="pt-1 h-5" src={bio} alt="biography" />
+          <img className="pt-2 h-5" src={bio} alt="biography" />
           <p className="text-white p-1">Biography</p>
         </div>
-        <div className="flex  gap-1 justify-between">
-          <button id="resume" type="button">
+        <div className="flex  gap-[1px] justify-between">
+          <button className="" id="resume" type="button">
             <span className="">-</span>
           </button>
           <button id="close" type="button">
@@ -57,8 +57,15 @@ export const Biography = () => {
       {/*
       content div
       */}
-      <div className=" pt-10 px-16">
-        <img className="w-full min-h-72 h-auot" src={self} alt="self" loading="lazy" />
+      <div className="  pt-10 px-24">
+        <div className="w-full flex justify-center">
+          <img
+            className="w-full min-h-52 h-[13rem]"
+            src={self}
+            alt="self"
+            loading="lazy"
+          />
+        </div>
         <h2 className="text-2xl font-bold py-5"> Zakaria Rabhi (ZAC)</h2>
         <h4 className="text-gray-600 font-medium pt- text-xs">
           I'm a junior software system administrator based in Khouribga,

@@ -7,6 +7,7 @@ import logo from "./logo.svg";
 import { useState, useEffect } from "react";
 import { Biography } from "./components/Biography";
 import { AppContext, AppProvider } from "./context/AppContext";
+import { FooterNav } from "./components/Footer";
 
 const Win95Icons = {
   bio: "./assets/win95Icons/bio.png",
@@ -53,6 +54,7 @@ function App() {
           </button>
         </li>
       </ul>
+      <FooterNav />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import ResumeIcon from "../assets/win95Icons/resume.png"
 import { Document ,Page} from 'react-pdf';
-
+import resume from "../assets/Resume/zrabhi.pdf"
 export const Resume = () => {
   return (
     <div className="overflow-y-auto resize z-99 border-4 left-48  fixed h-[780px] w-[550px] bg-gray95">
@@ -21,9 +21,9 @@ export const Resume = () => {
           </button>
         </div>
       </div>
+
       <Document file={"../assets/Resume/Resume-pdf.pdf"}>
-        <Page pageNumber={1} />
-        </Document> 
+        </Document>
     </div>
   );
 };
