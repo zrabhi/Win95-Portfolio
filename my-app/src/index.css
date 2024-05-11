@@ -45,7 +45,7 @@
  body {
   /* fixed may change later */
   font-family: "MS Sans Serif";
-  background-image: url("./assets/WindowsBg/win95Blue.jpg");
+  background-image: url("./assets/WindowsBg/win95bg.jpg");
   background-size: cover;
 }
 
@@ -81,4 +81,14 @@
 #start:hover {
   background-color: #bababa;
   border-color: #5a5a5a  #fafafa  #fafafa #5a5a5a;
+}
+
+#window {
+  background: silver;
+  border-color: #fafafa #0f0f0f #0f0f0f #fafafa;
+  box-shadow: 1.5px 1.5px #000;
+}
+#window:hover {
+  background-color: #bababa;
+  border-color: #0f0f0f  #fafafa  #fafafa #0f0f0f;
 }

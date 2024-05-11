@@ -1,6 +1,9 @@
 import bio from "../assets/win95Icons/bio.png";
 import html from "../assets/techs/html.png";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 import self from "../assets/Biography/zac.png";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const Technologies = [
   {
@@ -35,22 +38,26 @@ const Technologies = [
 ];
 
 export const Biography = () => {
+  const {BioData} = useContext(AppContext)!;
+  if (!BioData)
+    throw new Error("Biography.tsx must be used within a AppProvider");
   return (
     <div className=" overflow-y-auto resize z-99 border-4 left-48  fixed h-[780px] w-[550px] bg-gray95">
       <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
         <div className="h-77 w-[540px] flex">
+        {/* <LazyLoadImage className="pt-2 h-5" src={bio}/> */}
           <img className="pt-2 h-5" src={bio} alt="biography" />
           <p className="text-white p-1">Biography</p>
         </div>
         <div className="flex  gap-[1px] justify-between">
-          <button className="" id="resume" type="button">
+          <button className="" id="resume" type="button" onClick={()=> BioData.setIsBioResumed(true)}>
             <span className="">-</span>
-          </button>
-          <button id="close" type="button">
-            <span className="">x</span>
           </button>
           <button id="resize">
             <span className="">-</span>
+          </button>
+          <button id="close" type="button" onClick={()=> BioData.setIsBioOpen(false)}>
+            <span className="">x</span>
           </button>
         </div>
       </div>
