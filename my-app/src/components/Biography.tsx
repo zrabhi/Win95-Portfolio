@@ -1,7 +1,7 @@
 import bio from "../assets/win95Icons/bio.png";
 import html from "../assets/techs/html.png";
-// import { LazyLoadImage } from "react-lazy-load-image-component";
 import self from "../assets/Biography/zac.png";
+// import self from "../assets/Biography/self.jpeg"
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
@@ -38,25 +38,33 @@ const Technologies = [
 ];
 
 export const Biography = () => {
-  const {BioData} = useContext(AppContext)!;
+  const { BioData } = useContext(AppContext)!;
   if (!BioData)
     throw new Error("Biography.tsx must be used within a AppProvider");
   return (
     <div className=" overflow-y-auto resize z-99 border-4 left-48  fixed h-[780px] w-[550px] bg-gray95">
       <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
         <div className="h-77 w-[540px] flex">
-        {/* <LazyLoadImage className="pt-2 h-5" src={bio}/> */}
           <img className="pt-2 h-5" src={bio} alt="biography" />
           <p className="text-white p-1">Biography</p>
         </div>
         <div className="flex  gap-[1px] justify-between">
-          <button className="" id="resume" type="button" onClick={()=> BioData.setIsBioResumed(true)}>
+          <button
+            className=""
+            id="resume"
+            type="button"
+            onClick={() => BioData.setIsBioResumed(true)}
+          >
             <span className="">-</span>
           </button>
           <button id="resize">
             <span className="">-</span>
           </button>
-          <button id="close" type="button" onClick={()=> BioData.setIsBioOpen(false)}>
+          <button
+            id="close"
+            type="button"
+            onClick={() => BioData.setIsBioOpen(false)}
+          >
             <span className="">x</span>
           </button>
         </div>
@@ -64,10 +72,10 @@ export const Biography = () => {
       {/*
       content div
       */}
-      <div className="  pt-10 px-24">
+      <div className="pt-10 px-24">
         <div className="w-full flex justify-center">
           <img
-            className="w-full min-h-52 h-[13rem]"
+            className="w-full min-h-52 h-[20rem]"
             src={self}
             alt="self"
             loading="lazy"
@@ -75,10 +83,13 @@ export const Biography = () => {
         </div>
         <h2 className="text-2xl font-bold py-5"> Zakaria Rabhi (ZAC)</h2>
         <h4 className="text-gray-600 font-medium pt- text-xs">
-          I'm a junior software system administrator based in Khouribga,
-          Morocco, and a student at 1337 Coding school - 42 Network I'm
-          passionate about managing systems and ensuring their smooth operation
-          to tackle real-world challenges.
+          I'm a budding full-stack developer rooted in Khouribga, Morocco, and
+          currently honing my skills at 1337 Coding School - 42 Network. My
+          heart beats for crafting seamless digital experiences across the
+          entire tech stack, from front-end finesse to back-end robustness. With
+          a fervent dedication to mastering the intricacies of coding, I'm
+          driven to create innovative solutions that tackle real-world
+          challenges head-on.
         </h4>
         <h4 className="text-gray-600 font-medium pt-4 text-xs">Morocco 📍</h4>
         <div className="flex flex-wrap items-center gap-2 mt-5">
@@ -125,6 +136,14 @@ export const Biography = () => {
             and operation but also embody the spirit of modern tech
             wizardry—transforming theoretical knowledge into real-world impact,
             one project at a time.
+          </p>
+          <p className="pt-[1rem] text-sm font-thin">
+            {" "}
+            Don't forget to check my Github
+            <a className=" text-orange-600" href="https://github.com/zrabhi">
+              {" "}
+              Here!
+            </a>
           </p>
         </div>
       </div>

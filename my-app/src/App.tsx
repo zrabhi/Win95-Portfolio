@@ -3,6 +3,7 @@ import BioIcon from "./assets/win95Icons/bio.png";
 import ResumeIcon from "./assets/win95Icons/resume.png";
 import { Resume } from "./components/Resume";
 import Photos from "./assets/win95Icons/photos.png";
+import MailIcon from "./assets/win95Icons/mail.png"
 import logo from "./logo.svg";
 import { useState, useEffect } from "react";
 import { Biography } from "./components/Biography";
@@ -57,14 +58,21 @@ function App() {
               src={ResumeIcon}
               alt="Resume"
             />
-            <p className="pt-2 font-msserif font- text-white">Resume</p>
+            <p className="pt-2 font-msserif font-thin text-sm text-white">Resume</p>
           </button>
         </li>
         <li className="w-16 hover:bg-gray-600">
           <button>
             <img className="ml-3 w-[30px] h-[30px]" src={Photos} alt="Photos" />
-            <p className="pt-2 font-msserif font-light text-white">Photos</p>
+            <p className="pt-2 font-msserif  font-thin text-sm text-white">Photos</p>
           </button>
+        </li>
+        <li className="w-16 hover:bg-gray-600">
+          <button>
+            <img className="ml-3 w-[30px] h-[30px]" src={MailIcon} alt="Photos" />
+            <p className="pt-2 font-msserif font-thin text-sm  text-white">Contact Me</p>
+          </button>
+
         </li>
       </ul>
       <FooterNav />

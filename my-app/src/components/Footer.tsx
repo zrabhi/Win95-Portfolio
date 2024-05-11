@@ -6,7 +6,12 @@ import ResumeIcon from "../assets/win95Icons/resume.png";
 import win95Icon from "../assets/win95.png";
 import { AppContext } from "../context/AppContext";
 
+
+// TODO: CREATE REAL TIME DATE AND TIME RENDERING
 export const FooterNav = () => {
+  const [time,setTime] = useState<string>(new Date().toLocaleTimeString())
+  const [date, setDate] = useState<string>(new Date().toLocaleDateString())
+
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const { BioData, ResumeData } = useContext(AppContext)!;
   if (!BioData || !ResumeData)
@@ -48,9 +53,9 @@ export const FooterNav = () => {
       {BioData.isBioOpen ? (
         <div
           id="window"
-          className="flex  gap-1 items-center w-[100px] border-2 h-[29px] my-1 ml-[.5rem]"
+          className="flex gap-1 items-center w-[100px] border-2 h-[29px] my-1 ml-[.5rem]"
         >
-          <img className=" ml-1 w-[18px] h-[18px]" src={bio} alt="Biography" />
+          <img className="ml-1 w-[18px] h-[18px]" src={bio} alt="Biography" />
           <button
             className=" font-extrabold text-sm"
             onClick={() =>
@@ -80,6 +85,15 @@ export const FooterNav = () => {
       ) : (
         ""
       )}
+      <div className="flex flex-1">
+
+      </div>
+      <div id="time" className=" mr-1 flex text-sm right-96 bg-gray-100 border-2 w-[160px] h-[29px]">
+        <p className=" ml-1 mt-1 text-sm">
+
+        {date + " " + time}
+        </p>
+      </div>
     </div>
   );
 };

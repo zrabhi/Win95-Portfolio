@@ -15,9 +15,17 @@ interface ResumeType {
   setIsResumeResumed: (Resumed: boolean) => void;
 }
 
+interface ContactMeType {
+    isContactMeOpen : boolean,
+    isContactMeResumed: boolean,
+    setIsContactMeOpen: (Open: boolean) => void;
+    setIsContactMeREsumed: (Resumed: boolean) => void;
+}
+
 interface AppContextType {
   BioData: BiographyType;
   ResumeData: ResumeType;
+  // ContactMeData: ContactMeType
 }
 interface AppProviderProps {
   children: React.ReactNode;
