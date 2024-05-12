@@ -44,7 +44,7 @@ export const FooterNav = () => {
             onClick={() =>
               menuIsOpen ? setMenuIsOpen(false) : setMenuIsOpen(true)
             }
-            className=" font-extrabold text-sm"
+            className="font-extrabold text-md text-l"
           >
             Start
           </button>

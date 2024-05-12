@@ -5,10 +5,13 @@ import { Resume } from "./components/Resume";
 import Photos from "./assets/win95Icons/photos.png";
 import MailIcon from "./assets/win95Icons/mail.png"
 import logo from "./logo.svg";
+import Clippy from "./assets/win95Icons/clippy.gif"
+import Rover from "./assets/win95Icons/rover.gif"
 import { useState, useEffect } from "react";
 import { Biography } from "./components/Biography";
 import { AppContext, AppProvider } from "./context/AppContext";
 import { FooterNav } from "./components/Footer";
+import { ContactMe } from "./components/ContactMe";
 
 const Win95Icons = {
   bio: "./assets/win95Icons/bio.png",
@@ -25,6 +28,7 @@ function App() {
 
   return (
     <div className="h-[950px]">
+      <ContactMe />
       {BioData.isBioOpen && !BioData.isBioResumed ? <Biography /> : ""}
       {ResumeData.isResumeOpen ? <Resume /> : ""}
       <ul className="p-10  w-20  flex flex-col gap-8">
@@ -38,7 +42,7 @@ function App() {
                 : BioData.setIsBioOpen(true);
             }}
           >
-            <img className="ml-3 w-[30px] h-[30px]" src={BioIcon} alt="Bio" />
+            <img className="ml-3 w-[32px] h-[32px]" src={BioIcon} alt="Bio" />
             <p className="pt-2  font-msserif font-light text-white">
               {" "}
               Biography
@@ -54,7 +58,7 @@ function App() {
             }
           >
             <img
-              className="ml-3 w-[30px] h-[30px]"
+              className="ml-3 w-[32px] h-[32px]"
               src={ResumeIcon}
               alt="Resume"
             />
@@ -63,18 +67,24 @@ function App() {
         </li>
         <li className="w-16 hover:bg-gray-600">
           <button>
-            <img className="ml-3 w-[30px] h-[30px]" src={Photos} alt="Photos" />
+            <img className="ml-3 w-[32px] h-[32px]" src={Photos} alt="Photos" />
             <p className="pt-2 font-msserif  font-thin text-sm text-white">Photos</p>
           </button>
         </li>
         <li className="w-16 hover:bg-gray-600">
           <button>
-            <img className="ml-3 w-[30px] h-[30px]" src={MailIcon} alt="Photos" />
+            <img className="ml-3 w-[32px] h-[32px]" src={MailIcon} alt="Photos" />
             <p className="pt-2 font-msserif font-thin text-sm  text-white">Contact Me</p>
           </button>
 
         </li>
       </ul>
+      <div className="bottom-2 absolute">
+          <img src={Rover} alt="Clippt" />
+      </div>
+      {/* <div className="bottom-2 right-0 absolute">
+        <img src={Clippy} alt="Clippy"/>
+      </div> */}
       <FooterNav />
     </div>
   );

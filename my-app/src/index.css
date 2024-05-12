@@ -45,7 +45,8 @@
  body {
   /* fixed may change later */
   font-family: "MS Sans Serif";
-  background-image: url("./assets/WindowsBg/win95bg.jpg");
+  background-color: #008080;
+  /* background-image: url("./assets/WindowsBg/win95bg.jpg"); */
   background-size: cover;
 }
 
@@ -89,6 +90,11 @@
   box-shadow: 1.5px 1.5px #000;
 }
 
+#Labels{
+  background: #fafafa;
+  border-color:  #5a5a5a  #fafafa  #fafafa #5a5a5a;;
+  box-shadow: .5px .5px #000;
+}
 #time{
   background: silver;
   border-color: #5a5a5a  #fafafa  #fafafa #5a5a5a;
