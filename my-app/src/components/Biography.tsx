@@ -42,7 +42,7 @@ export const Biography = () => {
   if (!BioData)
     throw new Error("Biography.tsx must be used within a AppProvider");
   return (
-    <div className="resize z-99 border-4 left-48  fixed h-[880px] w-[600px] bg-gray95">
+    <div className="resize z-99 border-4 left-48  fixed h-[880px] w-[800px] bg-gray95">
       <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
         <div className="h-77 w-[540px] flex">
           <img className="pt-2 h-5" src={bio} alt="biography" />
@@ -73,7 +73,7 @@ export const Biography = () => {
       <div className="overflow-y-auto h-[845px] pt-10 px-24">
         <div className="w-full flex justify-center">
           <img
-            className="w-full min-h-52 h-[24rem]"
+            className="w-full min-h-52 h-[29rem]"
             src={self}
             alt="self"
             loading="lazy"

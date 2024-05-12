@@ -92,7 +92,7 @@
 
 #Labels{
   background: #fafafa;
-  border-color:  #5a5a5a  #fafafa  #fafafa #5a5a5a;;
+  border-color:  #5a5a5a  #fafafa  #fafafa #5a5a5a;
   box-shadow: .5px .5px #000;
 }
 #time{
@@ -103,4 +103,9 @@
 #window:hover,#time:hover {
   background-color: #bababa;
   border-color: #0f0f0f  #fafafa  #fafafa #0f0f0f;
+}
+#From{
+  background: none;
+  border: none;
+  outline: none;
 }

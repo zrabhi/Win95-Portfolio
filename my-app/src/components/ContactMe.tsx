@@ -1,6 +1,11 @@
+import { useState } from "react";
 import MailIcon from "../assets/win95Icons/mail.png";
 
 export const ContactMe = () => {
+  const [object, setObject] = useState<string>("");
+
+  const setOnChange = (event: any) => setObject(event.target.value);
+
   return (
     <div className="resize z-99 border-4 left-48  fixed h-[480px] w-[500px] bg-gray95">
       <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
@@ -33,15 +38,50 @@ export const ContactMe = () => {
           </button>
         </div>
       </div>
-      <div className="bg-[#fafafa] border-2 border-[#fff] h-[205px]">
+      <div className="bg-[#fafafa] border-2 border-[#fff] h-[31%]">
         <div>
-            <h3 className="font-bold text-md text-2xl pt-1 text-ellipsis">New Message</h3>
-            <hr></hr>
+          <h3 className="font-bold text-md text-2xl pt-1 text-ellipsis">
+            {object === "" ? "New Message" : object}
+          </h3>
+          <hr></hr>
         </div>
-        <div className=" flex ">
-                <h3>To: </h3>
-                <span>ZAC</span>
+        <div className=" ">
+          <h3 className="text-sm my-2 font-extrabold text-gray-300">
+            To:
+            <span className="text-black  border-2 border-blue-200 p-1 rounded-full bg-blue-300 text-sm ml-2">
+              {" "}
+              ZAC
+            </span>
+          </h3>
+          <hr></hr>
         </div>
+        <div className="">
+          <div className="flex">
+            <h3 className="text-sm my-2 font-extrabold text-gray-300">
+              From:
+              <input
+                id="Form"
+                className="ml-2 w-auto bg-none border-none  text-black"
+              />
+            </h3>
+          </div>
+          <hr></hr>
+        </div>
+        <div className="">
+          <div className="flex">
+            <h3 className="text-sm my-2 font-extrabold text-gray-300">
+              Object:
+              <input
+                id="Form"
+                className="ml-2 w-auto bg-none border-none  text-black"
+                onChange={(e) => setOnChange(e)}
+              />
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div className="h-full w-full mt-1">
+        <textarea className="w-full bg-gray95 border-2 border-y-[#5a5a5a] border-x-[#0f0f0f] b resize-none" />
       </div>
       {/* <div className="mx-10 my-2">
         <p>

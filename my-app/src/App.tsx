@@ -82,9 +82,6 @@ function App() {
       <div className="bottom-2 absolute">
           <img src={Rover} alt="Clippt" />
       </div>
-      {/* <div className="bottom-2 right-0 absolute">
-        <img src={Clippy} alt="Clippy"/>
-      </div> */}
       <FooterNav />
     </div>
   );
