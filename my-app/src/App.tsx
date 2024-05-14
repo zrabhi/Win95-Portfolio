@@ -20,12 +20,20 @@ const Win95Icons = {
 };
 
 function App() {
-  const { BioData, ResumeData } = useContext(AppContext)!;
+  const { BioData, ResumeData, WindowData } = useContext(AppContext)!;
 
-  if (!BioData || !ResumeData) {
+  if (!BioData || !ResumeData || !WindowData) {
     throw new Error("App.tsx must be used within a AppProvider");
   }
-
+  const { innerWidth: width, innerHeight: height } = window;
+  useEffect(()=> {
+    window.addEventListener("resize", ()=>{
+      WindowData.setHeight(window.innerHeight)
+      console.log(window.innerHeight);
+      
+    })
+  },[])
+  
   return (
     <div className="h-[950px]">
       <ContactMe />

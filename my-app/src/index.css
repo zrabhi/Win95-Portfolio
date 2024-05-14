@@ -43,6 +43,7 @@
 
 }
  body {
+  margin:0;
   /* fixed may change later */
   font-family: "MS Sans Serif";
   background-color: #008080;

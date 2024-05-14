@@ -38,11 +38,13 @@ const Technologies = [
 ];
 
 export const Biography = () => {
-  const { BioData } = useContext(AppContext)!;
-  if (!BioData)
+  const { BioData, WindowData } = useContext(AppContext)!;
+  if (!BioData || !WindowData)
     throw new Error("Biography.tsx must be used within a AppProvider");
+  console.log("Zzzz", window.innerHeight);
+  
   return (
-    <div className="resize z-99 border-4 left-48  fixed h-[880px] w-[800px] bg-gray95">
+    <div className={`resize z-99 border-4 left-48  fixed h-[${window.innerHeight - 600}px] w-[800px] bg-gray95`}>
       <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
         <div className="h-77 w-[540px] flex">
           <img className="pt-2 h-5" src={bio} alt="biography" />
@@ -92,8 +94,6 @@ export const Biography = () => {
         <h4 className="text-gray-600 font-medium pt-4 text-xs">Morocco 📍</h4>
         <div className="flex flex-wrap items-center gap-2 mt-5">
           {Technologies.map((image: any, index: number) => {
-            console.log(image.image);
-
             return (
               <img
                 className="w-auto h-5 rounded-none text-xs"

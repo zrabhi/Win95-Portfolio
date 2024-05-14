@@ -22,9 +22,16 @@ interface ContactMeType {
     setIsContactMeREsumed: (Resumed: boolean) => void;
 }
 
+interface WindowData {
+  height: number,
+  width:number,
+  setHeight: (height: number) => void;
+  setWidth: (Width: number) => void
+}
 interface AppContextType {
   BioData: BiographyType;
   ResumeData: ResumeType;
+  WindowData: WindowData;
   // ContactMeData: ContactMeType
 }
 interface AppProviderProps {
@@ -49,6 +56,15 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       })),
   });
 
+  const [win, setWin] = useState<WindowData>(
+    {
+      height: window.innerHeight,
+      width: window.innerWidth,
+      setHeight: (height: number) => setWin((prevState: WindowData) => ({...prevState, height: height})),
+      setWidth: (Width: number) => setWin((prevState: WindowData) => ({...prevState, width: Width}))
+    }
+  )
+
   const [resume, setResume] = useState<ResumeType>({
     isResumeOpen: false,
     isResumeResumed: false,
@@ -58,7 +74,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         setResume((prevState : ResumeType) => ({...prevState, isResumeResumed: Resumed}))
   });
   return (
-    <AppContext.Provider value={{ BioData: biography, ResumeData: resume }}>
+    <AppContext.Provider value={{ BioData: biography, ResumeData: resume, WindowData: win }}>
       {children}
     </AppContext.Provider>
   );
