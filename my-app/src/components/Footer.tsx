@@ -17,7 +17,7 @@ export const FooterNav = () => {
   if (!BioData || !ResumeData)
     throw new Error("Footer.tsx must be used within a AppProvider");
   return (
-    <div className=" flex row items-center border-t-2 border-[#fafafa] h-[35px] absolute w-full bg-gray95 bottom-0 ">
+    <div className=" flex row items-center border-t-2 border-[#fafafa] h-[35px] fixed w-full bg-gray95 bottom-0 ">
       {menuIsOpen ? (
         <div
           id="menu"
@@ -80,7 +80,7 @@ export const FooterNav = () => {
             src={ResumeIcon}
             alt="Resume"
           />
-          <button className=" font-extrabold text-sm">Resume</button>
+          <button onClick={() => ResumeData.isResumeResumed ? ResumeData.setIsResumeResumed(false) : ResumeData.setIsResumeResumed(true)} className=" font-extrabold text-sm">Resume</button>
         </div>
       ) : (
         ""

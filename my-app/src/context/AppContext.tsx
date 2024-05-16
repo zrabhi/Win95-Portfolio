@@ -16,22 +16,23 @@ interface ResumeType {
 }
 
 interface ContactMeType {
-    isContactMeOpen : boolean,
-    isContactMeResumed: boolean,
-    setIsContactMeOpen: (Open: boolean) => void;
-    setIsContactMeREsumed: (Resumed: boolean) => void;
+  isContactMeOpen: boolean;
+  isContactMeResumed: boolean;
+  setIsContactMeOpen: (Open: boolean) => void;
+  setIsContactMeREsumed: (Resumed: boolean) => void;
 }
-
 interface WindowData {
-  height: number,
-  width:number,
+  height: number;
+  width: number;
   setHeight: (height: number) => void;
-  setWidth: (Width: number) => void
+  setWidth: (Width: number) => void;
 }
 interface AppContextType {
   BioData: BiographyType;
   ResumeData: ResumeType;
   WindowData: WindowData;
+  Clicked: string;
+  setClicked: React.Dispatch<React.SetStateAction<string>>;
   // ContactMeData: ContactMeType
 }
 interface AppProviderProps {
@@ -41,6 +42,7 @@ interface AppProviderProps {
 export const AppContext = React.createContext<AppContextType | null>(null);
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+  const [clicked, setClicked] = useState<string>("Bio");
   const [biography, setBiography] = useState<BiographyType>({
     isBioOpen: true,
     isBioResumed: false,
@@ -56,25 +58,40 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       })),
   });
 
-  const [win, setWin] = useState<WindowData>(
-    {
-      height: window.innerHeight,
-      width: window.innerWidth,
-      setHeight: (height: number) => setWin((prevState: WindowData) => ({...prevState, height: height})),
-      setWidth: (Width: number) => setWin((prevState: WindowData) => ({...prevState, width: Width}))
-    }
-  )
+  const [win, setWin] = useState<WindowData>({
+    height: window.innerHeight,
+    width: window.innerWidth,
+    setHeight: (height: number) =>
+      setWin((prevState: WindowData) => ({ ...prevState, height: height })),
+    setWidth: (Width: number) =>
+      setWin((prevState: WindowData) => ({ ...prevState, width: Width })),
+  });
 
   const [resume, setResume] = useState<ResumeType>({
     isResumeOpen: false,
     isResumeResumed: false,
     setIsResumeOpen: (Open: boolean) =>
-      setResume((prevState : ResumeType) => ({ ...prevState, isResumeOpen: Open })),
+      setResume((prevState: ResumeType) => ({
+        ...prevState,
+        isResumeOpen: Open,
+      })),
     setIsResumeResumed: (Resumed: boolean) =>
-        setResume((prevState : ResumeType) => ({...prevState, isResumeResumed: Resumed}))
+      setResume((prevState: ResumeType) => ({
+        ...prevState,
+        isResumeResumed: Resumed,
+      })),
   });
+
   return (
-    <AppContext.Provider value={{ BioData: biography, ResumeData: resume, WindowData: win }}>
+    <AppContext.Provider
+      value={{
+        BioData: biography,
+        ResumeData: resume,
+        WindowData: win,
+        Clicked: clicked,
+        setClicked: setClicked,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

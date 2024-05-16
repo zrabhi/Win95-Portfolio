@@ -38,14 +38,20 @@ const Technologies = [
 ];
 
 export const Biography = () => {
-  const { BioData, WindowData } = useContext(AppContext)!;
-  if (!BioData || !WindowData)
+  const { BioData, WindowData, Clicked, setClicked } = useContext(AppContext)!;
+  if (!BioData || !WindowData || !Clicked)
     throw new Error("Biography.tsx must be used within a AppProvider");
-  console.log("Zzzz", window.innerHeight);
-  
+
   return (
-    <div className={`resize z-99 border-4 left-48  fixed h-[${window.innerHeight - 600}px] w-[800px] bg-gray95`}>
-      <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
+    <div
+      onClick={() =>
+        Clicked !== "Bio" ? setClicked("Bio") : ""
+      }
+      className={`resize ${Clicked ==="Bio" ? "z-[99999]" : "z-0"}  border-4 left-[25%]  fixed h-[${
+        window.innerHeight - 600
+      }px] w-[800px] bg-gray95`}
+    >
+      <div className={`m-[1px]  h-[1.7rem] w-auto p-1 ${Clicked !== "Bio"? "bg-gray-500" : "bg-blue95" } z-10 border-2 flex justify-between items-center`}>
         <div className="h-77 w-[540px] flex">
           <img className="pt-2 h-5" src={bio} alt="biography" />
           <p className="text-white p-1">Biography</p>
@@ -60,7 +66,7 @@ export const Biography = () => {
             <span className="">-</span>
           </button>
           <button id="resize">
-            <span className="">-</span>
+            <span className="">+</span>
           </button>
           <button
             id="close"
