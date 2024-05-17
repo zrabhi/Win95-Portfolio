@@ -4,20 +4,18 @@ import ResumeIcon from "./assets/win95Icons/resume.png";
 import { Resume } from "./components/Resume";
 import Photos from "./assets/win95Icons/photos.png";
 import MailIcon from "./assets/win95Icons/mail.png";
-import logo from "./logo.svg";
-import Clippy from "./assets/win95Icons/clippy.gif";
+// import Clippy from "./assets/win95Icons/clippy.gif";
 import Rover from "./assets/win95Icons/rover.gif";
-import { useState, useEffect } from "react";
 import { Biography } from "./components/Biography";
-import { AppContext, AppProvider } from "./context/AppContext";
+import { AppContext} from "./context/AppContext";
 import { FooterNav } from "./components/Footer";
-import { ContactMe } from "./components/ContactMe";
+// import { ContactMe } from "./components/ContactMe";
 
-const Win95Icons = {
-  bio: "./assets/win95Icons/bio.png",
-  resume: "./assets/win95Icons/resume.png",
-  photos: "./assets/win95Icons/photos.png",
-};
+// const Win95Icons = {
+//   bio: "./assets/win95Icons/bio.png",
+//   resume: "./assets/win95Icons/resume.png",
+//   photos: "./assets/win95Icons/photos.png",
+// };
 
 function App() {
   const { BioData, ResumeData, WindowData, setClicked } =
@@ -45,7 +43,6 @@ function App() {
               {
                 BioData.setIsBioOpen(true) 
                 setClicked("Bio")
-
               }
             }}
           >
@@ -96,7 +93,7 @@ function App() {
         </li>
       </ul>
       <div className="bottom-2 absolute">
-        <img src={Rover} alt="Clippt" />
+        <img src={Rover} alt="Rover" />
       </div>
       <FooterNav />
     </div>

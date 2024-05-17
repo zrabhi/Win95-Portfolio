@@ -17,7 +17,7 @@ export const ContactMe = () => {
         Clicked === "ContactMe" ? "z-[99999]" : "z-0"
       } border-4 left-48  fixed h-[40%] w-[500px] bg-gray95`}
     >
-      <div className="m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 bg-blue95 flex justify-between items-center">
+      <div className={`m-[1px]  h-[1.7rem] w-auto p-1 z-10 border-2 ${Clicked === 'ContactMe' ?"bg-blue95" : "blue-gray-500"}  flex justify-between items-center`}>
         <div className="h-77 w-[540px] flex">
           <img
             className="pt-2 h-[20px] w-[16px] "
